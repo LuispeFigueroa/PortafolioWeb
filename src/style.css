@@ -1,14 +1,14 @@
 :root {
-    --bg: #0d0d0d;
-    --surface: #141414;
-    --surface2: #1a1a1a;
+    --bg: #0d0b0f;
+    --surface: #141018;
+    --surface2: #1a1520;
     --border: rgba(255, 255, 255, 0.07);
     --border-bright: rgba(255, 255, 255, 0.14);
     --text: #f0ede8;
-    --muted: #7a7672;
-    --accent: #c8f542;
-    --accent2: #f5a623;
-    --accent3: #42d4f5;
+    --muted: #7a7270;
+    --accent: #ff6b2b;
+    --accent2: #c084fc;
+    --accent3: #ffb347;
     --font-display: 'Syne', sans-serif;
     --font-body: 'DM Sans', sans-serif;
     --font-mono: 'DM Mono', monospace;
