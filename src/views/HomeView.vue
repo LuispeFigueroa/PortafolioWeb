@@ -80,18 +80,114 @@
     </div>
   </div>
 </section>
+<!-- STACK -->
+<section id="stack" class="stack-section">
+  <div class="section-header reveal">
+    <span class="section-num">02 //</span>
+    <h2 class="section-title">Tecnologías</h2>
+  </div>
+  <p class="section-intro reveal">
+    Mi stack principal es Vue en el front, Python/FastAPI en el back, y PostgreSQL como base de datos. He elegido estas herramientas porque las entiendo bien, no solo porque "son populares". Go lo usé en producción para El Lineup — me gustó especialmente la claridad estructural del lenguaje.
+  </p>
+  <div class="stack-grid reveal">
+    <div class="stack-cell" v-for="cell in stackCells" :key="cell.category">
+      <div class="stack-category">{{ cell.category }}</div>
+      <div class="stack-items">
+        <span class="stack-item" :class="{ highlight: item.highlight }" v-for="item in cell.items" :key="item.name">
+          {{ item.name }}
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-header reveal">
+    <span class="section-num">03 //</span>
+    <h2 class="section-title">Proyectos</h2>
+  </div>
+  <p class="section-intro reveal">
+    Cinco proyectos del curso de Servidores y Sistemas Web — desde componentes básicos hasta sistemas full stack con autenticación, Docker y deploy en producción. El orden refleja complejidad técnica, no cronología.
+  </p>
+  <ProjectCard
+    v-for="p in projects"
+    :key="p.id"
+    :project="p"
+    class="reveal"
+  />
+</section>
   </div>
 </template>
 
 <script setup>
 import { onMounted, onUnmounted } from 'vue'
-
+import ProjectCard from '../components/ProjectCard.vue'
+import { projects } from '../data.js'
 const courses = [
   'Algoritmos y Estructura de Datos',
   'Bases de Datos',
   'Servidores y Sistemas Web',
   'Programación Plataformas Móviles',
   'Programación de Microprocesadores',
+]
+const stackCells = [
+  {
+    category: 'FRONTEND',
+    items: [
+      { name: 'Vue', highlight: true },
+      { name: 'React', highlight: true },
+      { name: 'JavaScript / TypeScript', highlight: true },
+      { name: 'HTML semántico', highlight: false },
+      { name: 'CSS / responsive', highlight: false },
+      { name: 'Vite', highlight: false },
+    ],
+  },
+  {
+    category: 'BACKEND',
+    items: [
+      { name: 'Python — FastAPI', highlight: true },
+      { name: 'Go — Gin', highlight: true },
+      { name: 'REST APIs', highlight: false },
+      { name: 'Autenticación (bcrypt, JWT)', highlight: false },
+      { name: 'Flutter (móvil)', highlight: false },
+    ],
+  },
+  {
+    category: 'BASE DE DATOS',
+    items: [
+      { name: 'PostgreSQL', highlight: true },
+      { name: 'SQL avanzado (CTEs, RANK, vistas)', highlight: false },
+      { name: 'Firebase', highlight: false },
+      { name: 'Diseño relacional', highlight: false },
+    ],
+  },
+  {
+    category: 'INFRAESTRUCTURA',
+    items: [
+      { name: 'Docker + Docker Compose', highlight: true },
+      { name: 'Railway (deploy)', highlight: false },
+      { name: 'Vercel / GitHub Pages', highlight: false },
+      { name: 'Git — flujo por features', highlight: false },
+    ],
+  },
+  {
+    category: 'CALIDAD',
+    items: [
+      { name: 'Vitest + Testing Library', highlight: true },
+      { name: 'Playwright (E2E)', highlight: false },
+      { name: 'Storybook', highlight: false },
+      { name: 'ESLint', highlight: false },
+    ],
+  },
+  {
+    category: 'OTROS',
+    items: [
+      { name: 'C++ — concurrencia, IoT', highlight: false },
+      { name: 'CUDA (GPU parallelism)', highlight: false },
+      { name: 'Kotlin — Android', highlight: false },
+      { name: 'Consumo de APIs externas', highlight: false },
+    ],
+  },
 ]
 
 let observer
@@ -313,5 +409,67 @@ section {
 @media (max-width: 768px) {
   section { padding: 4rem 1.5rem; }
   .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+}
+
+/* ── STACK ── */
+.stack-section {
+  background: var(--surface);
+  border-top: 0.5px solid var(--border);
+  border-bottom: 0.5px solid var(--border);
+}
+.section-intro {
+  font-size: 0.9rem;
+  color: var(--muted);
+  max-width: 560px;
+  margin-bottom: 3rem;
+  line-height: 1.7;
+}
+.stack-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 0.5px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.stack-cell {
+  background: var(--surface);
+  padding: 1.5rem;
+  transition: background 0.2s;
+}
+.stack-cell:hover { background: var(--surface2); }
+.stack-category {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--accent);
+  letter-spacing: 0.12em;
+  margin-bottom: 0.75rem;
+}
+.stack-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.stack-item {
+  font-size: 0.9rem;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.stack-item::before {
+  content: '';
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--muted);
+  flex-shrink: 0;
+}
+.stack-item.highlight { color: var(--text); }
+.stack-item.highlight::before { background: var(--accent); }
+/* ── PROJECTS ── */
+#projects {
+  border-top: 0.5px solid var(--border);
 }
 </style>
