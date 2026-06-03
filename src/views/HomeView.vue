@@ -12,7 +12,7 @@
       </h1>
       <div class="hero-bottom">
         <p class="hero-bio">
-          <strong>Desarrollador full stack.</strong> Construyo la solución compmpleta — con criterio sobre qué tecnología elegir y por qué. Prefiero entender las bases antes de usar atajos.
+          <strong>Desarrollador full stack.</strong> Construyo la solución completa — con criterio sobre qué tecnología elegir y por qué. Prefiero entender las bases antes de usar atajos.
         </p>
         <div class="hero-stats">
           <div class="stat-item">
