@@ -6,7 +6,13 @@
       <li><button @click="scrollTo('stack')">stack</button></li>
       <li><button @click="scrollTo('projects')">proyectos</button></li>
       <li><button @click="scrollTo('contact')">contacto</button></li>
+      <li>
+      <a href = "https://github.com/LuispeFigueroa/PortafolioWeb" target="_blank" class="nav-repo">
+      Repo del portafolio
+      </a>
+      </li>
     </ul>
+    
   </nav>
 </template>
 
@@ -61,5 +67,21 @@ nav {
 @media (max-width: 768px) {
   nav { padding: 1rem 1.5rem; }
   .nav-links { display: none; }
+}
+
+.nav-repo {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--accent);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  border: 0.5px solid rgba(255,107,43,0.35);
+  padding: 5px 12px;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+.nav-repo:hover {
+  background: rgba(255,107,43,0.08);
+  border-color: var(--accent);
 }
 </style>

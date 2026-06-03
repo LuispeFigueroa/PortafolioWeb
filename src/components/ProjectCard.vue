@@ -219,4 +219,11 @@ defineProps({ project: Object })
   .project-entry.featured .project-visual { min-height: 240px; }
   .project-info { border-left: none; border-top: 0.5px solid var(--border); }
 }
+
+.project-entry.featured .project-img {
+  filter: blur(0px) brightness(0.55);
+}
+.project-entry.featured:hover .project-img {
+  filter: blur(0px) brightness(0.65);
+}
 </style>

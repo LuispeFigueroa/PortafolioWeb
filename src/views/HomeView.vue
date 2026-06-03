@@ -12,7 +12,7 @@
       </h1>
       <div class="hero-bottom">
         <p class="hero-bio">
-          <strong>Desarrollador full stack.</strong> Construyo desde la interfaz hasta la base de datos — con criterio sobre qué tecnología elegir y por qué. Prefiero entender las bases antes de usar atajos.
+          <strong>Desarrollador full stack.</strong> Construyo la solución compmpleta — con criterio sobre qué tecnología elegir y por qué. Prefiero entender las bases antes de usar atajos.
         </p>
         <div class="hero-stats">
           <div class="stat-item">
@@ -41,9 +41,9 @@
         <div class="about-text reveal">
           <p>Estudiante de <strong>Ingeniería en Ciencias de la Computación en la Universidad del Valle de Guatemala</strong>, 5to semestre. Colegio Internacional Montessori, bachillerato en Ciencias y Letras.</p>
           <p>Me interesa construir productos que resuelvan problemas reales, desde 0 — ya sea una idea propia o la de otra persona. Lo que me motiva no es terminar la tarea, sino entender qué estoy construyendo y poder defenderlo.</p>
-          <p>Fuera del código: toco batería, bajo y guitarra. Hago jiu jitsu y MMA. Disciplinas distintas, misma lógica: la consistencia y la técnica siempre ganan al talento sin fundamento.</p>
+          <p>Fuera del código: toco batería, bajo y guitarra. Hago jiu jitsu, Softball y disfruto correr. Disciplinas distintas, misma lógica: la consistencia y la técnica siempre ganan al talento sin fundamento.</p>
           <div class="philosophy-block">
-            <p>Estamos en un punto de inflexión en el desarrollo de software. Tomar el camino fácil con IA para todo el código es una trampa. Prefiero aprender las bases aunque sean tediosas — para poder trabajar junto a seniors que realmente saben.</p>
+            <p>Estamos en un momento clave para el desarrollo de software. Usar IA para todo es la salida fácil y se nota. Prefiero aprender las bases aunque tome más tiempo, para poder sentarme con un senior y entender de qué está hablando.</p>
           </div>
         </div>
         <div class="about-aside reveal">
@@ -89,7 +89,7 @@
         <h2 class="section-title">Tecnologías</h2>
       </div>
       <p class="section-intro reveal">
-        Mi stack principal es Vue en el front, Python/FastAPI en el back, y PostgreSQL como base de datos. He elegido estas herramientas porque las entiendo bien, no solo porque "son populares". Go lo usé en producción para El Lineup — me gustó especialmente la claridad estructural del lenguaje.
+        Este portafolio está construido con Vue, no porque quería  cumplir con el requisito, sino porque creo que hay que mantenerse al día con lo que el mercado está usando. Al mismo tiempo, FastAPI, Go y PostgreSQL siguen siendo relevantes porque hay miles de sistemas productivos que dependen de ellos. Encontrar un balance entre las dos cosas es lo que te hace útil en un equipo real.
       </p>
       <div class="stack-grid reveal">
         <div class="stack-cell" v-for="cell in stackCells" :key="cell.category">
@@ -160,9 +160,14 @@
 
     <!-- FOOTER -->
     <footer>
-      <p>Luis Pedro Figueroa · 2026</p>
-      <p>UVG · Ciencias de la Computación · 5to semestre</p>
-    </footer>
+  <p>Luis Pedro Figueroa · 2025</p>
+  <div class="footer-right">
+    <p>UVG · Cs. de la Computación · 5to semestre</p>
+    <a href="https://github.com/LuispeFigueroa/PortafolioWeb" target="_blank" class="footer-repo">
+      Ver código fuente ↗
+    </a>
+  </div>
+</footer>
   </div>
 </template>
 
@@ -595,4 +600,27 @@ footer p {
 @media (max-width: 768px) {
   footer { flex-direction: column; gap: 0.5rem; text-align: center; }
 }
+
+footer {
+  padding: 2rem 3rem;
+  border-top: 0.5px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.4rem;
+}
+.footer-repo {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--accent);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: opacity 0.2s;
+}
+.footer-repo:hover { opacity: 0.7; }
 </style>
