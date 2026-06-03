@@ -1,7 +1,8 @@
 <template>
-  <div class="project-entry" :class="{ 'full-width': project.full }">
+  <div class="project-entry" :class="{ 'full-width': project.full, 'featured': project.featured }">
     <div class="project-visual" :class="project.bgClass">
-      <div class="project-visual-bg">{{ project.label }}</div>
+<img v-if="project.img" :src="project.img" :alt="project.name" class="project-img" />      <div class="project-visual-bg">{{ project.label }}</div>
+      <div v-if="project.featured" class="featured-badge">★ Destacado</div>
     </div>
     <div class="project-info">
       <div>
@@ -45,6 +46,12 @@ defineProps({ project: Object })
 }
 .project-entry:hover { border-color: var(--border-bright); }
 .project-entry.full-width { grid-template-columns: 220px 1fr; }
+.project-entry.featured {
+  grid-template-columns: 1fr;
+  grid-template-rows: 420px auto;
+  border-color: rgba(255,179,71,0.25);
+}
+.project-entry.featured:hover { border-color: rgba(255,179,71,0.5); }
 
 .project-visual {
   position: relative;
@@ -55,15 +62,51 @@ defineProps({ project: Object })
   justify-content: center;
 }
 .project-entry.full-width .project-visual { min-height: 200px; }
+.project-entry.featured .project-visual { min-height: 420px; }
+
+.project-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  filter: blur(1px) brightness(0.6);
+  transition: filter 0.4s;
+}
+.project-entry:hover .project-img {
+  filter: blur(1px) brightness(0.5);
+}
 
 .project-visual-bg {
+  position: relative;
+  z-index: 1;
   font-family: var(--font-display);
   font-weight: 800;
   font-size: 4rem;
   letter-spacing: -0.04em;
-  opacity: 0.08;
+  opacity: 0.6;
   color: var(--text);
   user-select: none;
+}
+.project-entry.featured .project-visual-bg {
+  font-size: 8rem;
+  opacity: 0.04;
+}
+
+.featured-badge {
+  position: absolute;
+  top: 1.25rem;
+  left: 1.25rem;
+  z-index: 2;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  color: #ffb347;
+  background: rgba(255,179,71,0.1);
+  border: 0.5px solid rgba(255,179,71,0.35);
+  border-radius: 20px;
+  padding: 5px 14px;
 }
 
 .vis-tienda { background: linear-gradient(135deg, #1a0a00 0%, #0d0500 100%); }
@@ -78,6 +121,11 @@ defineProps({ project: Object })
   flex-direction: column;
   justify-content: space-between;
   border-left: 0.5px solid var(--border);
+}
+.project-entry.featured .project-info {
+  border-left: none;
+  border-top: 0.5px solid var(--border);
+  padding: 2rem 2.5rem;
 }
 .project-num {
   font-family: var(--font-mono);
@@ -94,6 +142,7 @@ defineProps({ project: Object })
   margin-bottom: 0.75rem;
   line-height: 1.1;
 }
+.project-entry.featured .project-name { font-size: 2.5rem; }
 .project-desc {
   font-size: 0.88rem;
   color: var(--muted);
@@ -164,8 +213,10 @@ defineProps({ project: Object })
 
 @media (max-width: 768px) {
   .project-entry,
-  .project-entry.full-width { grid-template-columns: 1fr; }
-  .project-visual { min-height: 140px; }
+  .project-entry.full-width,
+  .project-entry.featured { grid-template-columns: 1fr; grid-template-rows: auto; }
+  .project-visual { min-height: 200px; }
+  .project-entry.featured .project-visual { min-height: 240px; }
   .project-info { border-left: none; border-top: 0.5px solid var(--border); }
 }
 </style>

@@ -1,7 +1,34 @@
+import tiendaImg from './assets/tienda.png'
+import lineupImg from './assets/lineup.png'
+import ontaImg from './assets/onta.png'
+import calcImg from './assets/calc.png'
+import snakeImg from './assets/snake.png'
 export const projects = [
     {
-        id: 'tienda',
+        id: 'onta',
         num: '01',
+        type: 'FEATURED PROJECT',
+        name: '¿ONTA?',
+        desc: 'Mini-blog de películas con la API de TMDB. Muestra información, tendencias semanales y en qué plataforma de streaming está cada película. SPA con React Router v6, Context API, tema claro/oscuro y favoritos persistentes.',
+        tech: ['React', 'Vite', 'React Router v6', 'Context API', 'TMDB API'],
+        highlights: [
+            '4 rutas con React Router v6',
+            'Estado global: tema + favoritos en Context',
+            'Componentes documentados con tabla de props',
+            '5 endpoints de TMDB integrados',
+        ],
+        demo: 'https://luispefigueroa.github.io/Ejercicio04WEB/',
+        repo: 'https://github.com/LuispeFigueroa/Ejercicio04WEB',
+        accentColor: '#ffb347',
+        bgClass: 'vis-onta',
+        label: 'ONTA?',
+        full: true,
+        featured: true,
+        img: ontaImg,
+    },
+    {
+        id: 'tienda',
+        num: '02',
         type: 'FULL STACK',
         name: 'Tienda Musical',
         desc: 'Sistema de gestión de inventario y ventas para una tienda de instrumentos. Autenticación con bcrypt, roles de empleado, CRUD completo, reportes con SQL avanzado (CTEs, RANK, vistas), exportación a CSV y carrito de ventas con useReducer.',
@@ -18,10 +45,12 @@ export const projects = [
         bgClass: 'vis-tienda',
         label: 'TIENDA',
         full: false,
+        featured: false,
+        img: tiendaImg,
     },
     {
         id: 'lineup',
-        num: '02',
+        num: '03',
         type: 'FULL STACK',
         name: 'El Lineup',
         desc: 'Plataforma para gestionar ligas de softball/béisbol. Frontend en Vanilla JS, API REST en Go con Gin, PostgreSQL en Railway. Standings en tiempo real, búsqueda, subida de imágenes y exportación a CSV sin librerías.',
@@ -39,26 +68,8 @@ export const projects = [
         bgClass: 'vis-lineup',
         label: 'LINEUP',
         full: false,
-    },
-    {
-        id: 'onta',
-        num: '03',
-        type: 'FRONTEND SPA',
-        name: '¿ONTA?',
-        desc: 'Mini-blog de películas con la API de TMDB. Muestra información, tendencias semanales y en qué plataforma de streaming está cada película. SPA con React Router v6, Context API, tema claro/oscuro y favoritos persistentes.',
-        tech: ['React', 'Vite', 'React Router v6', 'Context API', 'TMDB API'],
-        highlights: [
-            '4 rutas con React Router v6',
-            'Estado global: tema + favoritos en Context',
-            'Componentes documentados con tabla de props',
-            '5 endpoints de TMDB integrados',
-        ],
-        demo: null,
-        repo: 'https://github.com/LuispeFigueroa/Ejercicio04WEB',
-        accentColor: '#ffb347',
-        bgClass: 'vis-onta',
-        label: 'ONTA?',
-        full: false,
+        featured: false,
+        img: lineupImg,
     },
     {
         id: 'calc',
@@ -74,6 +85,8 @@ export const projects = [
         bgClass: 'vis-calc',
         label: 'CALC',
         full: true,
+        featured: false,
+        img: calcImg,
     },
     {
         id: 'snake',
@@ -83,11 +96,13 @@ export const projects = [
         desc: 'Juego Snake clásico en React. Manejo de estado con useState/useEffect, game loop, niveles de dificultad progresivos y componentes separados por responsabilidad.',
         tech: ['React', 'Vite', 'useState', 'useEffect'],
         highlights: [],
-        demo: null,
+        demo: 'https://luispefigueroa.github.io/Lab-6-Snake-/',
         repo: 'https://github.com/LuispeFigueroa/Lab-6-Snake-',
         accentColor: '#c084fc',
         bgClass: 'vis-snake',
         label: 'SNAKE',
         full: true,
+        featured: false,
+        img: snakeImg,
     },
 ]

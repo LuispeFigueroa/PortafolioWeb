@@ -1,11 +1,11 @@
 :root {
     --bg: #0d0b0f;
     --surface: #141018;
-    --surface2: #1a1520;
+    --surface2: #1c1525;
     --border: rgba(255, 255, 255, 0.07);
     --border-bright: rgba(255, 255, 255, 0.14);
     --text: #f0ede8;
-    --muted: #7a7270;
+    --muted: #7a7272;
     --accent: #ff6b2b;
     --accent2: #c084fc;
     --accent3: #ffb347;
@@ -27,12 +27,25 @@ html {
 }
 
 body {
-    background: var(--bg);
+    background: #0d0b0f;
     color: var(--text);
     font-family: var(--font-body);
     font-size: 16px;
     line-height: 1.6;
     overflow-x: hidden;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(135deg,
+            rgba(255, 107, 43, 0.15) 0%,
+            rgba(131, 58, 180, 0.18) 35%,
+            rgba(192, 132, 252, 0.13) 60%,
+            rgba(255, 107, 43, 0.10) 100%);
+    pointer-events: none;
+    z-index: 0;
 }
 
 body::before {
@@ -55,6 +68,6 @@ body::before {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--border-bright);
+    background: linear-gradient(to bottom, #ff6b2b, #c084fc);
     border-radius: 2px;
 }

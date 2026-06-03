@@ -30,92 +30,139 @@
         </div>
       </div>
     </section>
+
     <!-- ABOUT -->
-<section id="about">
-  <div class="section-header reveal">
-    <span class="section-num">01 //</span>
-    <h2 class="section-title">Sobre mí</h2>
-  </div>
-  <div class="about-grid">
-    <div class="about-text reveal">
-      <p>Estudiante de <strong>Ingeniería en Ciencias de la Computación en la Universidad del Valle de Guatemala</strong>, 5to semestre. Colegio Internacional Montessori, bachillerato en Ciencias y Letras.</p>
-      <p>Me interesa construir productos que resuelvan problemas reales, desde 0 — ya sea una idea propia o la de otra persona. Lo que me motiva no es terminar la tarea, sino entender qué estoy construyendo y poder defenderlo.</p>
-      <p>Fuera del código: toco batería, bajo y guitarra. Hago jiu jitsu y MMA. Disciplinas distintas, misma lógica: la consistencia y la técnica siempre ganan al talento sin fundamento.</p>
-      <div class="philosophy-block">
-        <p>Estamos en un punto de inflexión en el desarrollo de software. Tomar el camino fácil con IA para todo el código es una trampa. Prefiero aprender las bases aunque sean tediosas — para poder trabajar junto a seniors que realmente saben.</p>
+    <section id="about">
+      <div class="section-header reveal">
+        <span class="section-num">01 //</span>
+        <h2 class="section-title">Sobre mí</h2>
       </div>
-    </div>
-    <div class="about-aside reveal">
-      <div class="aside-card">
-        <div class="aside-card-title">EDUCACIÓN</div>
-        <div class="edu-item">
-          <div>
-            <div class="edu-name">Universidad del Valle de Guatemala</div>
-            <div class="edu-sub">Lic. Ingeniería en Ciencias de la Computación</div>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p>Estudiante de <strong>Ingeniería en Ciencias de la Computación en la Universidad del Valle de Guatemala</strong>, 5to semestre. Colegio Internacional Montessori, bachillerato en Ciencias y Letras.</p>
+          <p>Me interesa construir productos que resuelvan problemas reales, desde 0 — ya sea una idea propia o la de otra persona. Lo que me motiva no es terminar la tarea, sino entender qué estoy construyendo y poder defenderlo.</p>
+          <p>Fuera del código: toco batería, bajo y guitarra. Hago jiu jitsu y MMA. Disciplinas distintas, misma lógica: la consistencia y la técnica siempre ganan al talento sin fundamento.</p>
+          <div class="philosophy-block">
+            <p>Estamos en un punto de inflexión en el desarrollo de software. Tomar el camino fácil con IA para todo el código es una trampa. Prefiero aprender las bases aunque sean tediosas — para poder trabajar junto a seniors que realmente saben.</p>
           </div>
-          <div class="edu-year">2024–</div>
         </div>
-        <div class="edu-item">
-          <div>
-            <div class="edu-name">Colegio Internacional Montessori</div>
-            <div class="edu-sub">Bachillerato en Ciencias y Letras</div>
+        <div class="about-aside reveal">
+          <div class="aside-card">
+            <div class="aside-card-title">EDUCACIÓN</div>
+            <div class="edu-item">
+              <div>
+                <div class="edu-name">Universidad del Valle de Guatemala</div>
+                <div class="edu-sub">Lic. Ingeniería en Ciencias de la Computación</div>
+              </div>
+              <div class="edu-year">2024–</div>
+            </div>
+            <div class="edu-item">
+              <div>
+                <div class="edu-name">Colegio Internacional Montessori</div>
+                <div class="edu-sub">Bachillerato en Ciencias y Letras</div>
+              </div>
+              <div class="edu-year">2022–23</div>
+            </div>
+            <div class="distinction-badge">★ Estudiante distinguido UVG 2025</div>
           </div>
-          <div class="edu-year">2022–23</div>
-        </div>
-        <div class="distinction-badge">★ Estudiante distinguido UVG 2025</div>
-      </div>
-      <div class="aside-card">
-        <div class="aside-card-title">CURSOS RELEVANTES</div>
-        <div class="tag-list">
-          <span class="tag" v-for="c in courses" :key="c">{{ c }}</span>
-        </div>
-      </div>
-      <div class="aside-card">
-        <div class="aside-card-title">IDIOMAS</div>
-        <div class="tag-list">
-          <span class="tag accent">Español — Nativo</span>
-          <span class="tag purple">Inglés — C2</span>
+          <div class="aside-card">
+            <div class="aside-card-title">CURSOS RELEVANTES</div>
+            <div class="tag-list">
+              <span class="tag" v-for="c in courses" :key="c">{{ c }}</span>
+            </div>
+          </div>
+          <div class="aside-card">
+            <div class="aside-card-title">IDIOMAS</div>
+            <div class="tag-list">
+              <span class="tag accent">Español — Nativo</span>
+              <span class="tag purple">Inglés — C2</span>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-<!-- STACK -->
-<section id="stack" class="stack-section">
-  <div class="section-header reveal">
-    <span class="section-num">02 //</span>
-    <h2 class="section-title">Tecnologías</h2>
-  </div>
-  <p class="section-intro reveal">
-    Mi stack principal es Vue en el front, Python/FastAPI en el back, y PostgreSQL como base de datos. He elegido estas herramientas porque las entiendo bien, no solo porque "son populares". Go lo usé en producción para El Lineup — me gustó especialmente la claridad estructural del lenguaje.
-  </p>
-  <div class="stack-grid reveal">
-    <div class="stack-cell" v-for="cell in stackCells" :key="cell.category">
-      <div class="stack-category">{{ cell.category }}</div>
-      <div class="stack-items">
-        <span class="stack-item" :class="{ highlight: item.highlight }" v-for="item in cell.items" :key="item.name">
-          {{ item.name }}
-        </span>
+    </section>
+
+    <!-- STACK -->
+    <section id="stack" class="stack-section">
+      <div class="section-header reveal">
+        <span class="section-num">02 //</span>
+        <h2 class="section-title">Tecnologías</h2>
       </div>
-    </div>
-  </div>
-</section>
-<!-- PROJECTS -->
-<section id="projects">
-  <div class="section-header reveal">
-    <span class="section-num">03 //</span>
-    <h2 class="section-title">Proyectos</h2>
-  </div>
-  <p class="section-intro reveal">
-    Cinco proyectos del curso de Servidores y Sistemas Web — desde componentes básicos hasta sistemas full stack con autenticación, Docker y deploy en producción. El orden refleja complejidad técnica, no cronología.
-  </p>
-  <ProjectCard
-    v-for="p in projects"
-    :key="p.id"
-    :project="p"
-    class="reveal"
-  />
-</section>
+      <p class="section-intro reveal">
+        Mi stack principal es Vue en el front, Python/FastAPI en el back, y PostgreSQL como base de datos. He elegido estas herramientas porque las entiendo bien, no solo porque "son populares". Go lo usé en producción para El Lineup — me gustó especialmente la claridad estructural del lenguaje.
+      </p>
+      <div class="stack-grid reveal">
+        <div class="stack-cell" v-for="cell in stackCells" :key="cell.category">
+          <div class="stack-category">{{ cell.category }}</div>
+          <div class="stack-items">
+            <span class="stack-item" :class="{ highlight: item.highlight }" v-for="item in cell.items" :key="item.name">
+              {{ item.name }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="section-header reveal">
+        <span class="section-num">03 //</span>
+        <h2 class="section-title">Proyectos</h2>
+      </div>
+      <p class="section-intro reveal">
+        Cinco proyectos del curso de Servidores y Sistemas Web — desde componentes básicos hasta sistemas full stack con autenticación, Docker y deploy en producción. El orden refleja complejidad técnica, no cronología.
+      </p>
+      <ProjectCard
+        v-for="p in projects"
+        :key="p.id"
+        :project="p"
+        class="reveal"
+      />
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact-section">
+      <div class="contact-grid">
+        <div class="reveal">
+          <h2 class="contact-headline">Contáctame<span class="accent-dot">.</span></h2>
+          <p class="contact-sub">
+            Quiero llevar mis ideas y las de los demás a la realidad. Si tenés un proyecto, una meta , o simplemente querés hablar de código — escribime.
+          </p>
+          <div class="contact-cards">
+            <a href="mailto:lp.figueroamonroy@gmail.com" class="contact-card">
+              <span class="contact-card-icon">✉</span>
+              <div>
+                <div class="contact-card-type">EMAIL</div>
+                <div class="contact-card-val">lp.figueroamonroy@gmail.com</div>
+              </div>
+              <span class="contact-card-arrow">↗</span>
+            </a>
+            <a href="https://github.com/LuispeFigueroa" target="_blank" class="contact-card">
+              <span class="contact-card-icon">⌥</span>
+              <div>
+                <div class="contact-card-type">GITHUB</div>
+                <div class="contact-card-val">github.com/LuispeFigueroa</div>
+              </div>
+              <span class="contact-card-arrow">↗</span>
+            </a>
+            <a href="tel:+50250405157" class="contact-card">
+              <span class="contact-card-icon">◎</span>
+              <div>
+                <div class="contact-card-type">TELÉFONO</div>
+                <div class="contact-card-val">(+502) 5040-5157</div>
+              </div>
+              <span class="contact-card-arrow">↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>Luis Pedro Figueroa · 2026</p>
+      <p>UVG · Ciencias de la Computación · 5to semestre</p>
+    </footer>
   </div>
 </template>
 
@@ -123,6 +170,7 @@
 import { onMounted, onUnmounted } from 'vue'
 import ProjectCard from '../components/ProjectCard.vue'
 import { projects } from '../data.js'
+
 const courses = [
   'Algoritmos y Estructura de Datos',
   'Bases de Datos',
@@ -130,6 +178,7 @@ const courses = [
   'Programación Plataformas Móviles',
   'Programación de Microprocesadores',
 ]
+
 const stackCells = [
   {
     category: 'FRONTEND',
@@ -229,12 +278,7 @@ onUnmounted(() => { if (observer) observer.disconnect() })
   mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.5) 30%, rgba(0,0,0,0.5) 70%, transparent 100%);
 }
 .hero-glow {
-  position: absolute;
-  width: 600px; height: 600px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(255,107,43,0.07) 0%, transparent 70%);
-  top: -100px; right: -100px;
-  pointer-events: none;
+  background: radial-gradient(circle, rgba(255,107,43,0.18) 0%, transparent 70%);
 }
 .hero-tag {
   font-family: var(--font-mono);
@@ -291,17 +335,16 @@ onUnmounted(() => { if (observer) observer.disconnect() })
   letter-spacing: 0.06em;
   margin-top: 4px;
 }
-
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(24px); }
   to { opacity: 1; transform: translateY(0); }
 }
-
 @media (max-width: 768px) {
   .hero { padding: 0 1.5rem 4rem; }
   .hero-bottom { flex-direction: column; align-items: flex-start; }
   .hero-stats { flex-direction: row; gap: 1.5rem; }
 }
+
 /* ── REVEAL ── */
 .reveal {
   opacity: 0;
@@ -405,7 +448,6 @@ section {
   letter-spacing: 0.04em;
   margin-top: 1rem;
 }
-
 @media (max-width: 768px) {
   section { padding: 4rem 1.5rem; }
   .about-grid { grid-template-columns: 1fr; gap: 2rem; }
@@ -468,8 +510,89 @@ section {
 }
 .stack-item.highlight { color: var(--text); }
 .stack-item.highlight::before { background: var(--accent); }
+
 /* ── PROJECTS ── */
-#projects {
+#projects { border-top: 0.5px solid var(--border); }
+
+/* ── CONTACT ── */
+.contact-section { border-top: 0.5px solid var(--border); }
+.contact-grid { max-width: 640px; }
+.contact-headline {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(3rem, 7vw, 6rem);
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin-bottom: 1.25rem;
+}
+.accent-dot { color: var(--accent); }
+.contact-sub {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+  max-width: 480px;
+}
+.contact-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.1rem 1.5rem;
+  background: var(--surface);
+  border: 0.5px solid var(--border);
+  border-radius: 12px;
+  text-decoration: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+.contact-card:hover {
+  background: var(--surface2);
+  border-color: var(--accent);
+}
+.contact-card-icon {
+  font-size: 1.1rem;
+  color: var(--accent);
+  width: 2rem;
+  text-align: center;
+  flex-shrink: 0;
+}
+.contact-card-type {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+  margin-bottom: 2px;
+}
+.contact-card-val { font-size: 0.9rem; color: var(--text); }
+.contact-card-arrow {
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 1rem;
+  transition: transform 0.2s, color 0.2s;
+}
+.contact-card:hover .contact-card-arrow {
+  transform: translate(3px, -3px);
+  color: var(--accent);
+}
+
+/* ── FOOTER ── */
+footer {
+  padding: 2rem 3rem;
   border-top: 0.5px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer p {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--muted);
+}
+@media (max-width: 768px) {
+  footer { flex-direction: column; gap: 0.5rem; text-align: center; }
 }
 </style>

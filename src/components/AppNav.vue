@@ -1,14 +1,21 @@
 <template>
   <nav>
-    <a href="#hero" class="nav-logo">LP<span>.</span></a>
+    <button class="nav-logo" @click="scrollTo('hero')">LP<span>.</span></button>
     <ul class="nav-links">
-      <li><a href="#about">sobre mí</a></li>
-      <li><a href="#stack">stack</a></li>
-      <li><a href="#projects">proyectos</a></li>
-      <li><a href="#contact">contacto</a></li>
+      <li><button @click="scrollTo('about')">sobre mí</button></li>
+      <li><button @click="scrollTo('stack')">stack</button></li>
+      <li><button @click="scrollTo('projects')">proyectos</button></li>
+      <li><button @click="scrollTo('contact')">contacto</button></li>
     </ul>
   </nav>
 </template>
+
+<script setup>
+function scrollTo(id) {
+  const el = document.getElementById(id)
+  if (el) el.scrollIntoView({ behavior: 'smooth' })
+}
+</script>
 
 <style scoped>
 nav {
@@ -30,6 +37,9 @@ nav {
   letter-spacing: -0.02em;
   color: var(--text);
   text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 .nav-logo span { color: var(--accent); }
 .nav-links {
@@ -37,16 +47,17 @@ nav {
   gap: 2.5rem;
   list-style: none;
 }
-.nav-links a {
+.nav-links button {
   font-family: var(--font-mono);
   font-size: 0.78rem;
   color: var(--muted);
-  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
   letter-spacing: 0.04em;
   transition: color 0.2s;
 }
-.nav-links a:hover { color: var(--text); }
-
+.nav-links button:hover { color: var(--text); }
 @media (max-width: 768px) {
   nav { padding: 1rem 1.5rem; }
   .nav-links { display: none; }
